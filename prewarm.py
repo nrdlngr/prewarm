@@ -15,10 +15,9 @@ v_snapshot = 'snap-09a4397a'
 
 
 # FIO settings
-args = sys.argv[1]
 rw = 'randread'
-bs = args.split(' ')[0]
-iodepth = args.split(' ')[1]
+bs = sys.argv[1]
+iodepth = sys.argv[2]
 
 def get_available_devices():
     # Build available device list
