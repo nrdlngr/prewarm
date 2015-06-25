@@ -9,8 +9,8 @@ import sys
 
 # Volume settings
 volume_size = '100'
-v_type = 'io1'
-v_iops = '3000'
+v_type = 'gp2'
+#v_iops = '3000'
 v_snapshot = 'snap-09a4397a'
 
 
@@ -44,7 +44,7 @@ instance_id = requests.get('http://169.254.169.254/latest/meta-data/instance-id/
 conn = boto.ec2.connect_to_region(region)
 
 # Create volume
-vol = conn.create_volume(volume_size, az, volume_type=v_type, iops=v_iops, snapshot=v_snapshot)
+vol = conn.create_volume(volume_size, az, volume_type=v_type, snapshot=v_snapshot)
 #vol = conn.create_volume(volume_size, az, volume_type=v_type)
 volume_id = vol.id
 
