@@ -85,6 +85,7 @@ print cmd
 os.system(cmd)
 
 print "Running second pass"
+cmd = cmd + "(second_pass)"
 os.system(cmd)
 
 
